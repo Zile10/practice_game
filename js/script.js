@@ -20,7 +20,7 @@ class Person {
 
   draw() {
     ctx.beginPath()
-    ctx.fillStyle = 'black'
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.9)'
     ctx.ellipse(
       this.position.x + this.width/2,
       this.position.z + this.height,
@@ -54,12 +54,12 @@ class Person {
     this.position.z += this.velocity.z
     this.position.y += this.velocity.y
     if (this.position.y + this.velocity.y > 0) {
-      this.velocity.y -= 1
+      this.velocity.y -= 0.98
     } else {
       this.velocity.y = 0
     }
 
-    let shadow = (1000 - 3*this.position.y)/1000
+    let shadow = (1000 - 2.5*this.position.y)/1000
     if (shadow >= 0.1) {
       this.shadowSizer = shadow 
     }
